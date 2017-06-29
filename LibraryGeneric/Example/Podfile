@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LibraryGeneric_Example' do
+  pod 'LibraryGeneric', :path => '../'
+
+  target 'LibraryGeneric_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

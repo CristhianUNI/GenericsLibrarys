@@ -1,0 +1,16 @@
+PODS:
+  - LibraryGeneric (0.1.0)
+
+DEPENDENCIES:
+  - LibraryGeneric (from `../`)
+
+EXTERNAL SOURCES:
+  LibraryGeneric:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LibraryGeneric: 8331de5169be95b25478d6f406b8b118883804ca
+
+PODFILE CHECKSUM: 245189b341d0e01b7e66e51bc3e220d20a753af9
+
+COCOAPODS: 1.1.1

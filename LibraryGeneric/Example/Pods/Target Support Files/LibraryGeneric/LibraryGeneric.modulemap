@@ -1,0 +1,6 @@
+framework module LibraryGeneric {
+  umbrella header "LibraryGeneric-umbrella.h"
+
+  export *
+  module * { export * }
+}
