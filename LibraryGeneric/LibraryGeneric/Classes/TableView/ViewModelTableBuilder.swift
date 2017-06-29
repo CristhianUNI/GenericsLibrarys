@@ -44,12 +44,12 @@ public class ViewModelTableBuilder {
         return self.sections[index].rows.count
     }
     
-    public func bind(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+    public func bind(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let vmCell = getRowByIndex(indexPath: indexPath)
         return vmCell.load(tableView: tableView, indexPath: indexPath)
     }
     
-    public func onDisplay(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    public func onDisplay(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) {
         let vmCell = getRowByIndex(indexPath: indexPath)
         vmCell.willDisplay(tableView: tableView, willDisplayCell: cell, forRowAtIndexPath: indexPath)
     }
@@ -62,7 +62,7 @@ public class ViewModelTableBuilder {
         }
     }
     
-    public func onSelect(tableView: UITableView, indexPath: NSIndexPath) {
+    public func onSelect(tableView: UITableView, indexPath: IndexPath) {
         let vmCell = getRowByIndex(indexPath: indexPath)
         return vmCell.onSelect(tableView: tableView, indexPath: indexPath)
     }
@@ -79,11 +79,11 @@ public class ViewModelTableBuilder {
         return height
     }
     
-    public func getRowByIndex(indexPath: NSIndexPath) -> ViewModelRowProtocol {
+    public func getRowByIndex(indexPath: IndexPath) -> ViewModelRowProtocol {
         return sections[indexPath.section].rows[indexPath.row]
     }
     
-    public func setRowModelByIndex( indexPath: NSIndexPath, model: AnyClass) {
+    public func setRowModelByIndex( indexPath: IndexPath, model: AnyClass) {
         getRowByIndex(indexPath: indexPath).setModel(model: model)
     }
     
@@ -169,19 +169,19 @@ public class ViewModelRow<Model>: ViewModelRowProtocol {
         return height
     }
     
-    public func bind(tableView: UITableView, cell: UITableViewCell, indexPath: NSIndexPath) {
+    public func bind(tableView: UITableView, cell: UITableViewCell, indexPath: IndexPath) {
         self.hideSeparatorIfApply(cell: cell)
     }
     
-    public func onSelect(tableView: UITableView, indexPath: NSIndexPath) { }
+    public func onSelect(tableView: UITableView, indexPath: IndexPath) { }
     
-    public func willDisplay(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) { }
+    public func willDisplay(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: IndexPath) { }
     
     public func setOnBindHandler(handler: @escaping BindHandlerType) {
         self.onBindHandler = handler
     }
     
-    public func load(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+    public func load(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let vCell = tableView.dequeueReusableCell(withIdentifier: getViewId(), for: indexPath as IndexPath)
         bind(tableView: tableView, cell: vCell, indexPath: indexPath)
         
