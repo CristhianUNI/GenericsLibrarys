@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LibraryGeneric'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Generics Librarys for iOS Apps'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ Generics Librarys for iOS Apps in Core Systems
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'LibraryGeneric/Classes/**/*'
+  s.source_files = 'LibraryGeneric/LibraryGeneric/Classes/*.swift', 'LibraryGeneric/LibraryGeneric/Classes/Extension/*.swift', 'LibraryGeneric/LibraryGeneric/Classes/TableView/*.swift', 'LibraryGeneric/LibraryGeneric/Classes/NetWorking/Base/*.swift', 'LibraryGeneric/LibraryGeneric/Classes/NetWorking/Parsers/*.swift'
   
   # s.resource_bundles = {
   #   'LibraryGeneric' => ['LibraryGeneric/Assets/*.png']
