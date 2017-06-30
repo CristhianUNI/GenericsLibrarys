@@ -15,6 +15,7 @@ public class AppColors {
     public static let black           = UIColor.black
     public static let blue            = UIColor.blue
 
+    public static var primary         = UIColor(hex: "#48A5CA")
     public static let lightGrey       = UIColor(hex: "#9E9E9E")
     public static let fontGrey        = UIColor(hex: "#8a979d") //8D9EA4  font color
     public static let lightDarkGrey   = UIColor(hex: "#7d8d9c")  // 7d8d9c
