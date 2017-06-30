@@ -1,5 +1,5 @@
 # GenericsLibrarys
-Generics Librarys para applicaciones hechas en iOS, desarrollada por Core Systems
+Generics Librarys para applicaciones hechas en iOS
 
 
 ### Swift Version
@@ -22,9 +22,6 @@ y en la terminal ejecutar
 ```
 pod install
 ```
-
-## Desarrollado por Core Systems
-
 
 ## Dependencias Usadas
 
