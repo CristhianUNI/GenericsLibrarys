@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PositionIcon: String {
+public enum PositionIcon: String {
     case right
     case left
 }
@@ -145,14 +145,14 @@ public class CommonViewHelper {
         }
     }
     
-    static func setDefaultSelectedBackgroundView(cell: UITableViewCell, backgroundColor: UIColor       = AppColors.cardBackground) {
+    public static func setDefaultSelectedBackgroundView(cell: UITableViewCell, backgroundColor: UIColor       = AppColors.cardBackground) {
         let backgroundView             = UIView()
         backgroundView.backgroundColor = AppColors.white
         cell.selectedBackgroundView    = backgroundView
         
     }
     
-    static func dismissKeyboard(view: UIView) {
+    public static func dismissKeyboard(view: UIView) {
         view.endEditing(true)
     }
     
@@ -222,7 +222,7 @@ public class CommonViewHelper {
         return attText
     }
     
-    static func setIconTextField(textField: UITextField, image: String? = nil, position: PositionIcon? = PositionIcon.right ) {
+    public static func setIconTextField(textField: UITextField, image: String? = nil, position: PositionIcon? = PositionIcon.right ) {
         
         let imageName = image ?? "pickerViewPeak"
         
@@ -265,7 +265,7 @@ public class CommonViewHelper {
     }
     
     //TODO: Create class helper
-    private static func mutableAttributedString(view: UILabel) -> NSMutableAttributedString {
+    public static func mutableAttributedString(view: UILabel) -> NSMutableAttributedString {
         if view.attributedText != nil {
             return NSMutableAttributedString(attributedString: view.attributedText!)
         } else {
@@ -273,7 +273,7 @@ public class CommonViewHelper {
         }
     }
     
-    private static func rangeOf(view: UILabel, string: String) -> NSRange? {
+    public static func rangeOf(view: UILabel, string: String) -> NSRange? {
         let range = NSString(string: view.text ?? "").range(of: string)
         return range.location != NSNotFound ? range : nil
     }

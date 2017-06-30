@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias GenSelectHandler<T> = (T) -> Void
+public typealias GenSelectHandler<T> = (T) -> Void
 
 public protocol ViewModelRowProtocol {
     

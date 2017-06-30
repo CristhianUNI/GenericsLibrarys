@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum HelperError: Error {
+public enum HelperError: Error {
     case InvalidConversion(String)
 }
 

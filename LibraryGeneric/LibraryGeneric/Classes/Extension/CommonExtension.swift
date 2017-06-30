@@ -32,8 +32,8 @@ public extension UIColor {
     }
 }
 
-extension UITableView {
-    func setRefreshControl(title: String, target: AnyObject, action: Selector, height: CGFloat = 30) -> UIRefreshControl {
+public extension UITableView {
+    public func setRefreshControl(title: String, target: AnyObject, action: Selector, height: CGFloat = 30) -> UIRefreshControl {
         let refreshControl: UIRefreshControl = {
             let refreshControl = UIRefreshControl()
             refreshControl.attributedTitle = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: AppColors.black])
@@ -52,9 +52,9 @@ extension UITableView {
     }
 }
 
-extension UIViewController {
+public extension UIViewController {
     
-    func buildAlertController( title: String?, message: String?, style: UIAlertControllerStyle? = UIAlertControllerStyle.alert, titleAction: String? = "Si", cancelAction: String? = "No", cancelActionHandler: ((UIAlertAction) -> Void)? = nil, okActionHandler: @escaping (UIAlertAction) -> Void) {
+    public func buildAlertController( title: String?, message: String?, style: UIAlertControllerStyle? = UIAlertControllerStyle.alert, titleAction: String? = "Si", cancelAction: String? = "No", cancelActionHandler: ((UIAlertAction) -> Void)? = nil, okActionHandler: @escaping (UIAlertAction) -> Void) {
         
         guard let style = style else {
             return
@@ -89,7 +89,7 @@ public extension Double {
         return number ?? ""
     }
     
-    func toString(decimalPlaces val: Int) -> String {
+    public func toString(decimalPlaces val: Int) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = val
@@ -103,7 +103,7 @@ public extension Double {
     
 }
 
-extension UILabel {
+public extension UILabel {
     
     public func setTextColor(color: UIColor, range: NSRange?) {
         CommonViewHelper.setTextColorByRange(view: self, color: color, range: range)
@@ -113,7 +113,7 @@ extension UILabel {
         CommonViewHelper.setTextColorByRange(view: self, color: color, text: text)
     }
     
-    func setSpacing(_ spacing: CGFloat) {
+    public func setSpacing(_ spacing: CGFloat) {
         guard let text = self.text else { return }
         let newText = CommonViewHelper.buildSpacingFrom(text: text, spacing: spacing)
         self.attributedText = newText
@@ -147,68 +147,68 @@ public extension String {
     
 }
 
-extension Date {
+public extension Date {
     
-    var date: String {
+    public var date: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         return dateFormatter.string(from: self)
     }
     
-    var time: String {
+    public var time: String {
         let dateFormatter = DateFormatter()
         //dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         dateFormatter.dateFormat = "hh:mm a"
         return dateFormatter.string(from: self)
     }
     
-    func toStringWithFormat(format: String) -> String {
+    public func toStringWithFormat(format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
 }
 
-extension String.Index {
-    func advance(_ offset: Int, string: String) -> String.Index {
+public extension String.Index {
+    public func advance(_ offset: Int, string: String) -> String.Index {
         return string.index(self, offsetBy: offset)
     }
 }
 
 public extension Array {
     
-    func isInvalidIndex(index: Int) -> Bool {
+    public func isInvalidIndex(index: Int) -> Bool {
         return self.isEmpty || self.count <= index
     }
     
-    func randomize() -> Element {
+    public func randomize() -> Element {
         let index = TypeHelper.random(max: self.count)
         return self[index]
     }
     
 }
 
-extension UIViewController {
+public extension UIViewController {
     
-    func showAlert(title: String?, content: String?, cancelTitle: String = "OK") {
+    public func showAlert(title: String?, content: String?, cancelTitle: String = "OK") {
         return MessageView.show(controller: self, title: title, message: content, cancelTitle: cancelTitle)
     }
     
 }
 
-extension UITextField {
+public extension UITextField {
     
-    func addPickerViewToolbar( target: AnyObject?, action: Selector)  {
+    public func addPickerViewToolbar( target: AnyObject?, action: Selector)  {
         CommonViewHelper.addPickerViewToolbar(view: self, target: target, action: action)
     }
     
-    func addDropdownAccesory(imageName: String? = nil, position: PositionIcon? = PositionIcon.right) {
+    public func addDropdownAccesory(imageName: String? = nil, position: PositionIcon? = PositionIcon.right) {
         CommonViewHelper.setIconTextField(textField: self, image: imageName, position: position)
     }
     
 }
 
-extension UIButton {
+public extension UIButton {
     public func addBorder(side: UIButtonBorderSide, color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
@@ -229,24 +229,24 @@ extension UIButton {
     
 }
 
-extension UIView {
+public extension UIView {
     
-    func addBorderTop(size: CGFloat, color: UIColor) {
+    public func addBorderTop(size: CGFloat, color: UIColor) {
         addBorderUtility(x: 0, y: 0, width: frame.width, height: size, color: color)
     }
     
-    func addBorderBottom(size: CGFloat, color: UIColor, width: CGFloat = 0.0) {
+    public func addBorderBottom(size: CGFloat, color: UIColor, width: CGFloat = 0.0) {
         
         //  let width1 = width != 0.0 ? width: frame.width
         addBorderUtility(x: 0, y: frame.height - size, width: frame.width, height: size, color: color)
     }
-    private func addBorderUtility(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, color: UIColor) {
+    public func addBorderUtility(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, color: UIColor) {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: x, y: y, width: width, height: height)
         layer.addSublayer(border)
     }
-    func toCard() {
+    public func toCard() {
         CommonViewHelper.setCardView(view: self)
     }
     

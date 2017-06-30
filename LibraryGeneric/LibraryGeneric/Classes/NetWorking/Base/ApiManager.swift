@@ -8,14 +8,14 @@
 
 import Foundation
 
-class ApiManager {
+public class ApiManager {
     
     public static let sharedInstance = ApiManager()
     
-    var authToken: String?
-    var http: HttpManager
+    public var authToken: String?
+    public var http: HttpManager
     
-    init() {
+    public init() {
         http = HttpManager()
         http.onParsedHandler = JsonParser.parseRootResponse
     }

@@ -8,18 +8,18 @@
 
 import SwiftyJSON
 
-protocol Parcelable {
+public protocol Parcelable {
     associatedtype TModel
     func parse(data: JSON?) -> TModel?
 }
 
-extension Parcelable {
+public extension Parcelable {
     
-    func parseRootResponse(json: JSON?) -> JSON? {
+    public func parseRootResponse(json: JSON?) -> JSON? {
         return JsonParser.parseRootResponse(json: json)
     }
     
-    func parseList(list jsonList: JSON?) -> [TModel]? {
+    public func parseList(list jsonList: JSON?) -> [TModel]? {
         return JsonParser.parseList(list: jsonList, parse: self.parse)
     }
     

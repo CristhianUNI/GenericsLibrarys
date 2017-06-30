@@ -12,12 +12,12 @@ import SwiftyJSON
 import PromiseKit
 import ResponseDetective
 
-class HttpManager {
+public class HttpManager {
     
-    var defaultHeaders: [String: String]?
-    var onParsedHandler: ((JSON?) -> JSON?)?
+    public var defaultHeaders: [String: String]?
+    public var onParsedHandler: ((JSON?) -> JSON?)?
     
-    init(headers: [String: String]? = nil, onParsedHandler: ((JSON?) -> JSON?)? = nil) {
+    public init(headers: [String: String]? = nil, onParsedHandler: ((JSON?) -> JSON?)? = nil) {
         self.defaultHeaders = headers
         self.onParsedHandler   = onParsedHandler
         

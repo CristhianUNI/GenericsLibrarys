@@ -9,17 +9,17 @@
 
 import SwiftyJSON
 
-class JsonParser {
+public class JsonParser {
     
-    static func parseRootResponse(json: JSON?) -> JSON? {
+    public static func parseRootResponse(json: JSON?) -> JSON? {
         return json?["data"]
     }
     
-    static func parseResponse(response: Any) -> JSON? {
+    public static func parseResponse(response: Any) -> JSON? {
         return JSON(response)
     }
     
-    static func parseList<TModel>(list jsonList: JSON?, parse parseHandler: (JSON?) -> TModel?) -> [TModel]? {
+    public static func parseList<TModel>(list jsonList: JSON?, parse parseHandler: (JSON?) -> TModel?) -> [TModel]? {
         guard let jsonList = jsonList else {
             return nil
         }

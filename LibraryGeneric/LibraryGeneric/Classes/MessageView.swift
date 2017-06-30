@@ -13,13 +13,13 @@ public class MessageView {
     
     let alert: UIAlertController!
     
-    init(title: String?, message: String?, cancelTitle: String? = "OK") {
+    public init(title: String?, message: String?, cancelTitle: String? = "OK") {
         alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: nil)
         alert.addAction(cancelAction)
     }
     
-    func show(controller: UIViewController) {
+    public func show(controller: UIViewController) {
         controller.present(alert, animated: true)
     }
     
