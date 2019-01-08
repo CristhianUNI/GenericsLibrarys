@@ -1,5 +1,5 @@
 # GenericsLibrarys
-Generics Librarys para applicaciones hechas en iOS
+Generics Librarys para aplicaciones realizadas en iOS
 
 
 ### Swift Version
