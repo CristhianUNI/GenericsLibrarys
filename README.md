@@ -11,13 +11,13 @@ swift 3.0
 
 ### Instalación
 
-En tu archivo Podfile poner lo siguiente
+Escribe en tu Podfile
 
 ```
 pod 'LibraryGeneric'
 ```
 
-y en la terminal ejecutar
+Luego ejecutar
 
 ```
 pod install
